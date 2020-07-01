@@ -1,0 +1,199 @@
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-direction($val) {
+  -webkit-flex-direction: $val;
+  flex-direction: $val;
+}
+
+@mixin justify-content($val) {
+  -webkit-box-pack: $val;
+  -moz-box-pack: $val;
+  -ms-flex-pack: $val;
+  -webkit-justify-content: $val;
+  justify-content: $val;
+}
+
+@mixin align-items($val) {
+  -webkit-box-align: $val;
+  -moz-box-align: $val;
+  -ms-flex-align: $val;
+  -webkit-align-items: $val;
+  align-items: $val;
+}
+
+@mixin align-content($val) {
+  -webkit-align-content: $val;
+  align-content: $val;
+}
+
+@mixin flex-wrap($val) {
+  -webkit-flex-wrap: $val;
+  flex-wrap: $val;
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+      @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+      @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+      @content;
+  }
+  @-o-keyframes #{$animation-name} {
+      @content;
+  }
+  @keyframes #{$animation-name} {
+      @content;
+  }
+}
+
+@mixin animation($str) {
+ animation: #{$str};
+-webkit-animation: #{$str};
+-moz-animation: #{$str};
+-ms-animation: #{$str};
+-o-animation: #{$str};
+
+}
+
+@mixin transitions($args...) {
+transition: $args;
+-webkit-transition: $args;
+-moz-transition: $args;
+-ms-transition: $args;
+-o-transition: $args;
+
+}
+
+@mixin opacity($opacity) {
+opacity: $opacity;
+$opacity-ie: $opacity * 100;
+filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin transform($transforms) {
+transform: $transforms;
+ -webkit-transform: $transforms;
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+
+
+}
+// rotate
+@mixin rotate ($deg) {
+@include transform(rotate(#{$deg}deg));
+}
+
+@mixin rotateY ($deg) {
+@include transform(rotateY(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+   @include transform(scale($scale));
+}
+// translate
+@mixin translate ($x, $y) {
+ @include transform(translate($x, $y));
+}
+
+@mixin translate3d ($x, $y, $z) {
+ @include transform(translate3d($x, $y, $z));
+}
+// skew
+@mixin skew ($x, $y) {
+ @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+// calculate em from pixels
+
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+@return #{$pixels/$context}em
+}
+
+@mixin flexbox() {
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+}
+
+
+//@mixin breakpoint($class) {
+//@if $class == phone {
+//  @media (max-width: 667px) {
+//    @content;
+//  }
+//} @else if $class == tablet {
+//  @media (max-width: 800px) {
+//    @content;
+//  }
+//} @else if $class == laptop {
+//  @media (max-width: 1200px ) {
+//    @content;
+//  }
+//} @else if $class == desktop {
+//  @media (max-width: 1366px) {
+//    @content;
+//  }
+//}
+//}
+
+
+@mixin font-size($size) {
+
+  font-size: 0px + $size;
+  font-size: 0rem + $size / $base-font-size;
+}
+
+@mixin breakpoint($bp, $min-max: min-width) {
+  $em: $bp/$base-font-size;
+  @media(#{$min-max}: #{$em}em) { @content; }
+}
+
+@mixin ssLandscape() {
+  @media (max-device-width: 799px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin button-reset () {
+
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+@mixin list-reset() {
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin hoverMouse () {
+  @media(hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+@mixin smallScreenShow () {
+  // complete over-ride to gsap styles for small screen, hence use of important
+  .is-small-screen & {
+    opacity: 1!important;
+    top: 0!important;
+    left: 0!important
+  }
+}

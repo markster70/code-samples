@@ -1,0 +1,280 @@
+.eitb-primary-nav {
+  position: fixed;
+  height: 100vh;
+  background-color: $primary-nav-bg-colour;
+  opacity: 0.5;
+  width: 100vw;
+  transform: translateX(100%);
+  z-index: 100;
+  top: 0;
+  right: 0;
+
+
+
+  @include breakpoint($bp-l) {
+    width: 450px;
+    //-webkit-box-shadow: -8px 0px 7px -8px rgba(0,0,0,0.47);
+    //-moz-box-shadow: -8px 0px 7px -8px rgba(0,0,0,0.47);
+    box-shadow: -8px 0px 7px -8px rgba(0,0,0,0.47);
+  }
+}
+
+.eitb-primary-nav-inner {
+  @include flexbox();
+  @include flex-direction(row);
+  @include justify-content(flex-end);
+  height: 100%;
+  @include flex-wrap(wrap);
+
+  @include breakpoint($bp-l) {
+    padding-right: 3rem;
+  }
+}
+
+
+.eitb-primary-nav-items {
+  @include list-reset();
+  align-self: center;
+  width: 100%;
+  margin-top: 5rem;
+  @include flexbox();
+  @include flex-wrap(wrap);
+
+  @include breakpoint($bp-l) {
+    width: 85%;
+    margin-top: 6rem;
+  }
+
+}
+
+.eitb-primary-nav-item {
+  left: -100px;
+  opacity: 0;
+  position: relative;
+
+  border-top : 1px solid $primary-blue;
+  border-bottom : 1px solid transparent;
+  width: 100%;
+  margin-left: auto;
+  @include transitions(width 250ms);
+
+  @include breakpoint($bp-l) {
+    width: 65%;
+    // requires max height to be set to stop the repaint trying to position elements on next line when mouseover happens
+    max-height: 56px;
+
+    &.is-current-section {
+      width: 100%;
+      &:after {
+        position: absolute;
+        bottom: -2px;
+        height: 1px;
+        width: 100%;
+        background-color: $primary-blue;
+        content: '';
+      }
+
+    }
+  }
+
+  &:last-child {
+    border-bottom : 1px solid $primary-blue;
+  }
+
+  @include hoverMouse() {
+
+    &:hover {
+      width: 100%;
+      cursor: pointer;
+      // using a pseudo element to mimic the bottom border here, so that I can position it
+      // over the top of the next siblings border
+      &:after {
+        position: absolute;
+        bottom: -2px;
+        height: 1px;
+        width: 100%;
+        background-color: $primary-blue;
+        content: '';
+      }
+
+
+      // next siblings border goes to transparent, and is mimicked by the pseudo element of the previous item
+      + li {
+        border-top : 1px solid transparent;
+      }
+
+    }
+
+
+
+    &:hover:last-child {
+      border-bottom: 1px solid transparent;
+
+      &:after {
+        bottom: -1px;
+      }
+    }
+
+  }
+
+
+  a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    @include flexbox();
+    color : $primary-nav-text-colour;
+    justify-content: center;
+    @include align-items(center);
+    padding: 0.65rem 0;
+
+    @include breakpoint($bp-l) {
+      padding: $space-std 0;
+    }
+
+    &:hover {
+      color : darken($primary-nav-text-colour, 10%);
+    }
+
+    span:last-child {
+      @include font-size(14);
+
+      @include breakpoint($bp-l) {
+        margin-left: auto;
+
+      }
+    }
+  }
+}
+
+.eitb-primary-nav-supplementary {
+
+  width: 100%;
+  padding:  0 $space-xl;
+
+  @include breakpoint($bp-l) {
+    width: 55%;
+    align-self: flex-end;
+    margin-bottom: $space-lg;
+    padding: 0;
+
+  }
+
+  @include breakpoint($bp-l-max, max-width) {
+    @include flexbox();
+    @include flex-wrap(wrap);
+  }
+
+
+  span {
+    color : $primary-blue;
+  }
+
+  .inner {
+    @include flexbox();
+    @include align-items(center);
+    flex-basis: 50%;
+
+    @include breakpoint($bp-l-max, max-width) {
+      @include flex-wrap(wrap);
+    }
+
+    @include breakpoint($bp-l) {
+      flex-basis: 100%;
+    }
+  }
+
+}
+
+.eitb-primary-nav-supplementary {
+  .is-primary.subtitle {
+    @include breakpoint($bp-l-max, max-width) {
+      flex-basis: 100%;
+      text-align: center;
+    }
+  }
+}
+
+
+.eitb-primary-nav-item-status {
+  @include font-size(12);
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  color: $primary-blue;
+
+  display: none;
+
+  @include breakpoint($bp-l) {
+    display: inline-block;
+  }
+
+}
+
+.eitb-primary-nav-logo-link {
+
+  @include breakpoint($bp-l) {
+    margin-left: auto;
+  }
+
+}
+
+.eitb-nav-logo-svg {
+    fill: $black;
+    @include transitions(fill 300ms);
+}
+
+
+.eitb-primary-nav-logo-link:hover {
+  svg {
+    g, rect {
+      fill: $primary-blue;
+    }
+  }
+}
+
+.eitb-primary-nav-social-wrap {
+  @include flexbox();
+  @include flex-wrap(wrap);
+
+
+  span {
+    flex-basis: 100%;
+  }
+
+  @include breakpoint($bp-l) {
+    margin-top: $space-xl;
+  }
+
+}
+
+.eitb-primary-nav-social-links {
+
+  padding-top: $space-std;
+  width: 100%;
+  @include flexbox();
+  @include justify-content(space-between);
+
+
+  a {
+
+    &:nth-child(n+2) {
+      margin-left: $space-xl;
+    }
+
+    svg path {
+      @include transitions(fill 300ms);
+    }
+
+    &:hover {
+      svg path {
+        fill: $darkest-gray;
+      }
+    }
+
+  }
+}
+
+.eit-nav-facebook-logo, .eit-nav-twitter-logo, .eit-nav-linkedin-logo {
+  fill: $primary-blue;
+
+}
