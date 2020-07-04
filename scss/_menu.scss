@@ -13,8 +13,6 @@
 
   @include breakpoint($bp-l) {
     width: 450px;
-    //-webkit-box-shadow: -8px 0px 7px -8px rgba(0,0,0,0.47);
-    //-moz-box-shadow: -8px 0px 7px -8px rgba(0,0,0,0.47);
     box-shadow: -8px 0px 7px -8px rgba(0,0,0,0.47);
   }
 }
