@@ -1,6 +1,6 @@
-This repository contains a number of stand-alone samples of code I havwe written in the last few months.
+This repository contains a number of stand-alone samples of code I have written in the last few months.
 
-The examples are written in HTML / SCSS / JavaScript, and Vue.JS to give an insight into my code style, and understandung of the Front-End Languages. 
+The examples are written in HTML / SCSS / JavaScript, and Vue.JS to give an insight into my code style, and understanding of the Front-End Languages. 
 
 As the files are derived from client code-bases, there are no full working examples to protect my clients. 
 
