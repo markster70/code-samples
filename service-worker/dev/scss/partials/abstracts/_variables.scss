@@ -1,0 +1,50 @@
+
+
+// colors
+
+$white : #ffffff;
+$black : #000000;
+
+$body-base-bg : $white;
+
+
+$primary-accent: #7ff7f0;
+$secondary-accent : #f9ccc1;
+$tertiary-accent : #f8ac84;
+$standout : #f8aa82;
+
+$grey-accent: #acacb2;
+$logo-txt-color: #464648;
+
+$body-copy-color : $black;
+
+// base fonts
+
+$base-font-size: 16;
+$base-line-height: 1.5;
+$base-font-family :  'Ubuntu', sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold : 500;
+
+
+// breakpoints
+
+$bp-massive: 1750;
+$bp-xxl: 1440;
+$bp-xl-max: 1279;
+$bp-xl: 1280;
+$bp-l-max: 959;
+$bp-l: 960;
+$bp-m-max: 767;
+$bp-m: 768;
+$bp-s-max: 639;
+$bp-s: 640;
+$bp-xs: 480;
+
+$bp-height-min: 900;
+
+
+// spacers
+
+$spacer-std : 1rem;

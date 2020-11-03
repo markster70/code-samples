@@ -1,0 +1,12 @@
+.no-javascript {
+
+  cursor: default!important;
+
+  body {
+    &,
+    * {
+      cursor: default!important;
+    }
+  }
+
+}

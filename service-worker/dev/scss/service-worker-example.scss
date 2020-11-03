@@ -1,0 +1,13 @@
+@import "partials/abstracts/variables";
+@import "partials/abstracts/mixins";
+
+@import "partials/globals/normalize";
+
+@import "partials/globals/base";
+@import "partials/globals/layout";
+@import "partials/globals/type";
+
+@import "partials/views/home";
+
+@import "partials/helpers-generics/helpers";
+@import "partials/helpers-generics/no-script";

@@ -1,0 +1,55 @@
+html {
+  font-size: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+p, li, button, a.btn, nav a, span, label, input, textarea, a, td, th, address, dt,dd {
+  font-family: $base-font-family;
+}
+
+h1,h2,h3,h4,h5,h6, blockquote, cite, blockquote span {
+  font-family: $base-font-family;
+  font-weight : $font-weight-regular;
+}
+
+
+h1,h2,h3,h4,h5,h6, p, li, button, a.btn, nav a, span, label, input {
+  line-height: 1.5;
+}
+
+
+.mn-body-copy {
+  color : $body-copy-color;
+  @include font-size(14);
+  font-weight: $font-weight-light;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+
+  @include breakpoint($bp-xl){
+    @include font-size(15);
+  }
+
+}
+
+.is-large-bd-copy {
+  @include font-size(24);
+  font-weight: $font-weight-bold;
+}
+
+.mn-copy-light {
+  font-weight: $font-weight-light;
+}
+
+.is-primary-txt {
+  color : $primary-accent;
+}
+
+.is-secondary-txt {
+  color: $secondary-accent;
+}
+
+.is-tertiary-txt {
+  color: $tertiary-accent;
+}
+

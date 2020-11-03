@@ -1,0 +1,27 @@
+.sw-ex-carousel {
+	display: flex;
+	margin: 2rem auto;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.sw-ex-carousel-item {
+	height: 200px;
+	flex-basis: 48%;
+	margin-bottom: $spacer-std;
+	
+	@include breakpoint($bp-l) {
+		height: 260px;
+		flex-basis: 32%;
+	}
+	
+	@include breakpoint($bp-xl) {
+		height: 350px;
+	}
+	
+	img {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+	}
+}
